@@ -1,0 +1,89 @@
+# 🏛️ Court Data Fetcher & Mini-Dashboard
+
+A web application to fetch and display case metadata and the latest orders/judgments from the **Delhi High Court**. This project provides a simple UI to query case information, a backend to handle scraping, and a database to log all queries.
+
+## ✨ Key Features
+
+* **Simple UI**: An intuitive web form to search for cases using Case Type, Case Number, and Filing Year.
+* **Data Scraping**: A backend service designed to fetch case details programmatically from the Delhi High Court portal.
+* **Data Display**: Renders parsed details in a clean, user-friendly dashboard, including party names, filing dates, hearing dates, and downloadable documents.
+* **Query Logging**: Every search query and its result is logged in a local SQLite database for analytics.
+* **Statistics Dashboard**: Displays key metrics like total queries, success rate, and unique cases searched.
+* **Error Handling**: Provides user-friendly messages for invalid inputs or server issues.
+
+## 💻 Tech Stack
+
+* **Backend**: Flask (Python)
+* **Frontend**: HTML, CSS, JavaScript (No framework)
+* **Database**: SQLite
+* **Web Scraping**: Selenium, BeautifulSoup (with a mock data fallback for demonstration)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Python 3.x
+* pip (Python package installer)
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/court-data-fetcher.git](https://github.com/your-username/court-data-fetcher.git)
+    cd court-data-fetcher/backend
+    ```
+
+2.  **Create and activate a virtual environment:**
+    ```bash
+    # For macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+
+    # For Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the application:**
+    ```bash
+    python app.py
+    ```
+
+5.  Open your browser and navigate to `http://127.0.0.1:5000`.
+
+## 🛡️ CAPTCHA Strategy
+
+The court website is protected by CAPTCHA. This project is designed with the following strategies in mind for a full implementation:
+
+1.  **Headless Browser**: Use Selenium to automate browser interactions in the background.
+2.  **OCR (Optical Character Recognition)**: Implement `pytesseract` to read the text from the CAPTCHA image.
+3.  **External Services**: Integrate with a third-party CAPTCHA-solving service for higher accuracy (a placeholder is included in the code).
+
+> **Note**: For this demonstration, the application uses **mock data** to ensure functionality without performing live scraping, which can be unreliable and may violate the court website's terms of service.
+
+## 📁 Project Structure
+
+
+/
+|-- backend/
+|   |-- app.py             # Main Flask application
+|   |-- scraper.py         # Web scraping and data extraction logic
+|   |-- requirements.txt   # Python dependencies
+|
+|-- database/
+|   |-- court_data.db      # SQLite database (auto-generated)
+|
+|-- frontend/
+|   |-- index.html         # Main HTML file for the UI
+|
+|-- readme.md              # Project documentation
+
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
