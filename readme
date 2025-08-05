@@ -1,6 +1,6 @@
 🏛️ Court Data Fetcher & Mini-Dashboard
 
-A web application to fetch and display case metadata and the latest orders/judgments from the **Delhi High Court**. This project provides a simple UI to query case information, a backend to handle scraping, and a database to log all queries.
+A web application to fetch and display case metadata and the latest orders/judgments from the Delhi High Court. This project provides a simple UI to query case information, a backend to handle scraping, and a database to log all queries.
 
 ✨ Key Features
 
